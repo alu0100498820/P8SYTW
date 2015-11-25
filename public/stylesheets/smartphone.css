@@ -1,0 +1,15 @@
+/*Reglas CSS adicionales para smartphone*/
+html { background-color: #F5FFFA; }
+
+/*#page-wrap:after { content: "Smartphone Layout"; }*/
+
+header h2, section h3 { display: none; }
+#tex1 { display: none; }
+body { font-size: xx-large; }
+footer, input { font-size: large; }
+
+#lista {
+  font-size:small;
+}
+
+#img1 {visibility:hidden;}

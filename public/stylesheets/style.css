@@ -1,0 +1,15 @@
+*    { margin: 0; padding: 0; }
+body {
+  font: 16px Georgia, serif
+}
+
+#page-wrap { margin: 2% auto; color: black; }
+section > div { padding: 20px; }
+header, nav, section, footer {text-align: center; }
+nav span { margin: 0px 10px 0px 0px; }
+
+#lista {
+  text-align: left;
+}
+
+#img1 {visibility:hidden;}
