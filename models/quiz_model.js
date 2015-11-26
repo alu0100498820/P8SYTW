@@ -2,6 +2,8 @@ var AbstractQuiz = require('../models/abstract_quiz_model.js');
 var Respuesta = require('../models/respuesta.js');
 var PreguntaLarga = require('../models/pregunta_larga.js');
 var PreguntaCorta = require('../models/pregunta_corta.js');
+var PregSelecMultiple = require('../models/P_Multiple.js');
+var PregSelecSimple = require('../models/P_Simple.js');
 
 function Quiz() {
   AbstractQuiz.call(this);
@@ -9,10 +11,21 @@ function Quiz() {
     { pregunta: new PreguntaCorta('¿Capital de Italia?'),
       respuesta: new Respuesta(/^\s*roma\s*$/i)
     },
+    
+    { pregunta: new PregSelecSimple('¿Capital de Grecia?',
+                                          ['Madrid', 'Roma', 'Atenas']),
+      respuesta: new Respuesta('Atenas')
+    },  
 
     { pregunta: new PreguntaLarga('¿Quien reinaba en España cuando se descubrió América?'),
       respuesta: new Respuesta(/\b(Isabel\s+y?\s*Fernando)|(Fernando\s+[ey]?\s*Isabel)|(reyes\s+cat[oó]licos)\b/i)
     },
+    
+    { pregunta: new PregSelecMultiple('¿Que animales son mamíferos?',
+                                        ['Ornitorrinco', 'Canguro', 'Ballena', 'Gato']),
+      respuesta: new Respuesta(['Ballena', 'Gato'])
+    },    
+    
     //*************************************************************************************************************************************
     { pregunta: new PreguntaCorta('¿Quien es el CEO de Apple Inc.?'),
       respuesta: new Respuesta(/^\s*tim cook\s*$/i)
@@ -21,11 +34,17 @@ function Quiz() {
     { pregunta: new PreguntaCorta('Lenovo, la empresa que fabrica de ordenadores, tablets y smartphones, es el acronimo de . . .'),
       respuesta: new Respuesta(/^\s*nueva leyenda\s*$/i)
     },
-
-    { pregunta: new PreguntaCorta('¿Cuando se creo la ULL (Universidad de la Laguna)?'),
-      respuesta: new Respuesta(/^\s*1927\s*$/i)
+    
+    { pregunta: new PregSelecSimple('¿Cuando se creo la ULL (Universidad de la Laguna)?',
+                                          ['1887', '1927', '1907']),
+      respuesta: new Respuesta('1927')
     },
- 
+
+    { pregunta: new PregSelecMultiple('¿Que equipos de la liga inglesa han ganado la Champions League o Copa de Europa?',
+                                        ['Liverpool', 'Manchester City', 'Manchester United', 'Nottingham Forest', 'Tottenham Hotspur', 'Aston Villa', 'Chelsea', 'Everton']),
+      respuesta: new Respuesta(['Liverpool', 'Manchester United', 'Nottingham Forest', 'Aston Villa', 'Chelsea'])
+    },
+
     { pregunta: new PreguntaCorta('¿Cual es el equipo de la NBA con mas campeonatos?'),
       respuesta: new Respuesta(/^\s*boston celtics\s*$/i)
     },
