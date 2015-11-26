@@ -1,22 +1,31 @@
 var Pregunta = require('../models/pregunta.js');
 
-var EJS = require('ejs');
+function PreguntaSelecMultiple(x, array) {
+  Pregunta.call(this);
 
-function PregSelecMultiple(q,options,r) {
-  Pregunta.call(this,q,r);
-  
-  this.toHTML = function(){
-		var html = "Pregunta: " + q + " (puede ser más de una)";
-		for (var i = 0; i < options.length; i++) {
-			html += '<br><input type="checkbox" name="respuesta" value="' + options[i] + '">' + options[i];
-		}
-		html += '</select><br><input type="submit" value="Enviar">'
-		return html;
-
-  }
+  this.pregunta_ = x;
+  this.array_ = array;
 }
-PregSelecMultiple.prototype = new Pregunta();
 
-PregSelecMultiple.prototype.constructor = PregSelecMultiple;
+PreguntaSelecMultiple.prototype = new Pregunta();
 
-module.exports = PregSelecMultiple;
+PreguntaSelecMultiple.prototype.constructor = PreguntaSelecMultiple;
+
+PreguntaSelecMultiple.prototype.vista = function(){
+  var vista = [];
+
+  for(var i=0; i<this.array_.length; i++){
+    vista[i] = "<option>" + this.array_[i] + "</option>";
+  }
+
+  vista.unshift("<select name='respuesta[]' size=" + this.array_.length + " multiple>");
+  vista.push("</select>");
+
+  return vista;
+}
+
+PreguntaSelecMultiple.prototype.get_pregunta = function(){
+  return this.pregunta_;
+}
+
+module.exports = PreguntaSelecMultiple;

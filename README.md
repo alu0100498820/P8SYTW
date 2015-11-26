@@ -47,8 +47,4 @@
 
 ---
 
-> [*Despliegue de la Aplicación en el IAAS*](http://10.6.128.95:8080/ "*Despliegue de la Aplicación en el IAAS*")
-
----
-
 > [*Despliegue de la Aplicación en* <img src="https://upload.wikimedia.org/wikipedia/en/thumb/a/a9/Heroku_logo.png/220px-Heroku_logo.png" width="70" height="20">](https://quiz2-sytw-2015.herokuapp.com/ "*Despliegue de la Aplicación en el Heroku*")
