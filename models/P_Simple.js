@@ -1,17 +1,17 @@
 var Pregunta = require('../models/pregunta.js');
 
-function PreguntaSelecSimple(x, array) {
+function PregSelecSimple(x, array) {
   Pregunta.call(this);
 
   this.pregunta_ = x;
   this.array_ = array;
 }
 
-PreguntaSelecSimple.prototype = new Pregunta();
+PregSelecSimple.prototype = new Pregunta();
 
-PreguntaSelecSimple.prototype.constructor = PreguntaSelecSimple;
+PregSelecSimple.prototype.constructor = PregSelecSimple;
 
-PreguntaSelecSimple.prototype.vista = function(){
+PregSelecSimple.prototype.vista = function(){
   var vista = [];
 
   for(var i=0; i<this.array_.length; i++){
@@ -24,8 +24,8 @@ PreguntaSelecSimple.prototype.vista = function(){
   return vista;
 }
 
-PreguntaSelecSimple.prototype.get_pregunta = function(){
+PregSelecSimple.prototype.get_pregunta = function(){
   return this.pregunta_;
 }
 
-module.exports = PreguntaSelecSimple;
+module.exports = PregSelecSimple;

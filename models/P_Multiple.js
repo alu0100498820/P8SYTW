@@ -1,17 +1,17 @@
 var Pregunta = require('../models/pregunta.js');
 
-function PreguntaSelecMultiple(x, array) {
+function PregSelecMultiple(x, array) {
   Pregunta.call(this);
 
   this.pregunta_ = x;
   this.array_ = array;
 }
 
-PreguntaSelecMultiple.prototype = new Pregunta();
+PregSelecMultiple.prototype = new Pregunta();
 
-PreguntaSelecMultiple.prototype.constructor = PreguntaSelecMultiple;
+PregSelecMultiple.prototype.constructor = PregSelecMultiple;
 
-PreguntaSelecMultiple.prototype.vista = function(){
+PregSelecMultiple.prototype.vista = function(){
   var vista = [];
 
   for(var i=0; i<this.array_.length; i++){
@@ -24,8 +24,8 @@ PreguntaSelecMultiple.prototype.vista = function(){
   return vista;
 }
 
-PreguntaSelecMultiple.prototype.get_pregunta = function(){
+PregSelecMultiple.prototype.get_pregunta = function(){
   return this.pregunta_;
 }
 
-module.exports = PreguntaSelecMultiple;
+module.exports = PregSelecMultiple;
