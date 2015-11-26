@@ -103,7 +103,7 @@ Quiz.prototype.getQuestion = function(x){
   return x['pregunta'].get_pregunta();
 }
 Quiz.prototype.getArea = function(x){
-  return x['pregunta'].get_area();
+  return x['pregunta'].vista();
 }
 
 module.exports = Quiz;
