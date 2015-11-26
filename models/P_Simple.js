@@ -1,31 +1,22 @@
 var Pregunta = require('../models/pregunta.js');
 
-function PregSelecSimple(x, array) {
-  Pregunta.call(this);
+var EJS = require('ejs');
 
-  this.pregunta_ = x;
-  this.array_ = array;
+function PregSelecSimple(q,options,r) {
+  Pregunta.call(this,q,r);
+	this.toHTML = function(){
+		var html = "Pregunta: " + q;
+		for (var i = 0; i < options.length; i++) {
+			html += '<br><input type="radio" name="respuesta" value="' + options[i] + '">' + options[i];
+		}
+		html += '<br><input type="submit" value="Enviar">'
+		return html;
+	}
 }
 
 PregSelecSimple.prototype = new Pregunta();
 
 PregSelecSimple.prototype.constructor = PregSelecSimple;
 
-PregSelecSimple.prototype.vista = function(){
-  var vista = [];
-
-  for(var i=0; i<this.array_.length; i++){
-    vista[i] = "<option>" + this.array_[i] + "</option>";
-  }
-
-  vista.unshift("<select name='respuesta'>");
-  vista.push("</select>");
-
-  return vista;
-}
-
-PregSelecSimple.prototype.get_pregunta = function(){
-  return this.pregunta_;
-}
 
 module.exports = PregSelecSimple;
