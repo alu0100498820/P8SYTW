@@ -1,6 +1,8 @@
 var Quiz = require('../models/quiz_model');
 var quiz = new Quiz();
 var current = quiz.randomQuestion();
+var  current_new = quiz.getQuestion(current);
+var  area = quiz.getArea(current);
 
 exports.question = function(req,res) {
   current = quiz.randomQuestion();
