@@ -10,7 +10,7 @@ function PregSelecMultiple(x, array) {
   
   var self = this;
 
-  EJS.renderFile('views/quizes/SelecMultiple.ejs',{array: this.array_}, function(err,html){
+  EJS.renderFile('views/quizes/P_Selec_Multiple.ejs',{array: this.array_}, function(err,html){
     if(err) throw err;
     else self.area_ = html;
   });
