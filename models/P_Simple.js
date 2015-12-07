@@ -19,7 +19,7 @@ function PregSelecSimple(x, array) {
 
 PregSelecSimple.prototype = new Pregunta();
 
-PregSelecSimple.prototypeget_area = function(){
+PregSelecSimple.prototype.get_area = function(){
   return this.area_;
 }
 
