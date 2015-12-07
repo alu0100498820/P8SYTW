@@ -3,7 +3,7 @@
 ## Práctica 8: Preguntas de Selección Simple y preguntas de Selección Múltiple.
 
 <p align="Center">
-    <img src="http://www.banking4you.in/images/quiz.jpg" title="Quiz." width="500" height="150">
+    <img src="http://static1.squarespace.com/static/52fa42e1e4b09494e1ffde13/5396fb78e4b028c25b53e2e2/54f407cfe4b03e3d11f4d237/1442826751724/?format=500w" title="Quiz." width="500" height="150">
 </p>
 
 ---
